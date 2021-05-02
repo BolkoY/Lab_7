@@ -222,13 +222,14 @@ public class MainFrame extends JFrame {
 
         // Очищаем текстовую область ввода сообщения
         textAreaOutgoing.setText("");
-        } catch (UnknownHostException e) {
+        } 
+            catch (UnknownHostException e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(MainFrame.this,
-            "Не удалось отправить сообщение: узел-адресат не найден",
-            "Ошибка", JOptionPane.ERROR_MESSAGE);
-
-            } catch (IOException e) {
+                    "Неверный IP", "Ошибка", JOptionPane.ERROR_MESSAGE);
+            textFieldTo.setText("");
+            textFieldTo.requestFocusInWindow();
+        } catch (IOException e) {
                 e.printStackTrace();
                 JOptionPane.showMessageDialog(MainFrame.this,
 
