@@ -43,7 +43,7 @@ public class MainFrame extends JFrame {
     private final JTextArea textAreaOutgoing;
 
 
-    public MainFrame() {
+    public MainFrame() {   
         super(FRAME_TITLE);
         setMinimumSize(
         new Dimension(FRAME_MINIMUM_WIDTH, FRAME_MINIMUM_HEIGHT));
@@ -81,38 +81,34 @@ public class MainFrame extends JFrame {
     }
     });
     // Компоновка элементов панели "Сообщение"
-    final GroupLayout layout2 = new GroupLayout(messagePanel);
-    messagePanel.setLayout(layout2);
-    layout2.setHorizontalGroup(layout2.createSequentialGroup()
-    .addContainerGap()
-    .addGroup(layout2.createParallelGroup(Alignment.TRAILING)
-    .addGroup(layout2.createSequentialGroup()
-    .addComponent(labelFrom)
-    .addGap(SMALL_GAP)
-    .addComponent(textFieldFrom)
-    .addGap(LARGE_GAP)
-    .addComponent(labelTo)
-    .addGap(SMALL_GAP)
-    .addComponent(textFieldTo))
-    .addComponent(scrollPaneOutgoing)
-    .addComponent(sendButton))
+        final GroupLayout layout2 = new GroupLayout(messagePanel);
+        messagePanel.setLayout(layout2);
+        layout2.setHorizontalGroup(layout2.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout2.createParallelGroup(GroupLayout.Alignment.TRAILING).addGroup(layout2.createSequentialGroup()
+                        .addComponent(labelFrom)
+                        .addGap(SMALL_GAP)
+                        .addComponent(textFieldFrom)
+                        .addGap(LARGE_GAP)
+                        .addComponent(labelTo)
+                        .addGap(SMALL_GAP)
+                        .addComponent(textFieldTo))
+                        .addComponent(scrollPaneOutgoing)
+                        .addComponent(sendButton))
+                .addContainerGap());
+        layout2.setVerticalGroup(layout2.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout2.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                        .addComponent(labelFrom)
+                        .addComponent(textFieldFrom)
+                        .addComponent(labelTo)
+                        .addComponent(textFieldTo))
+                .addGap(MEDIUM_GAP)
+                .addComponent(scrollPaneOutgoing)
+                .addGap(MEDIUM_GAP)
+                .addComponent(sendButton)
+                .addContainerGap());
 
-    .addContainerGap());
-    layout2.setVerticalGroup(layout2.createSequentialGroup()
-    .addContainerGap()
-
-    .addGroup(layout2.createParallelGroup(Alignment.BASELINE)
-
-    .addComponent(labelFrom)
-    .addComponent(textFieldFrom)
-    .addComponent(labelTo)
-    .addComponent(textFieldTo))
-
-    .addGap(MEDIUM_GAP)
-    .addComponent(scrollPaneOutgoing)
-    .addGap(MEDIUM_GAP)
-    .addComponent(sendButton)
-    .addContainerGap());
     // Компоновка элементов фрейма
     final GroupLayout layout1 = new GroupLayout(getContentPane());
     setLayout(layout1);
